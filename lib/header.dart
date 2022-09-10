@@ -12,7 +12,9 @@ class Header extends StatelessWidget with PreferredSizeWidget {
       elevation: 4,
       title: Row(
         children: [
-          Row(
+          Padding(
+            padding: EdgeInsets.only(right: 10),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 IconButton(
@@ -27,6 +29,7 @@ class Header extends StatelessWidget with PreferredSizeWidget {
                   child: const Image(image: AssetImage("assets/logo.png"), width: 90.0, isAntiAlias: true,)
                 )
               ],
+            ),
           ),
           Expanded(
             child: Row(
@@ -78,60 +81,55 @@ class Header extends StatelessWidget with PreferredSizeWidget {
                       )
                     )
                   )
+                ),
+                Ink(
+                  decoration: ShapeDecoration(
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                    shape: const CircleBorder()
+                  ),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.mic,
+                      color: Theme.of(context).iconTheme.color
+                    ),
+                  )
                 )
               ]
             )
           ),
           Padding(
-              padding: const EdgeInsets.only(left: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Ink(
-                    decoration: ShapeDecoration(
-                      color: Theme.of(context).scaffoldBackgroundColor,
-                      shape: const CircleBorder()
-                    ),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.mic,
-                        color: Theme.of(context).iconTheme.color
-                      ),
-                    )
-                  ),
-                  Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.camera_alt,
-                          color: Theme.of(context).iconTheme.color
-                        )
-                      ),
-                      const SizedBox(width: 10),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.notifications,
-                          color: Theme.of(context).iconTheme.color
-                        )
-                      ),
-                      const SizedBox(width: 10),
-                      IconButton(
-                        iconSize: 30,
-                        onPressed: () {},
-                        icon: ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: Image.asset(
-                            "assets/profile_picture.png",
-                          )
-                        )
-                      )
-                    ]
+            padding: const EdgeInsets.only(left: 10),
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.camera_alt,
+                    color: Theme.of(context).iconTheme.color
                   )
-                ]
-              )
+                ),
+                const SizedBox(width: 10),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.notifications,
+                    color: Theme.of(context).iconTheme.color
+                  )
+                ),
+                const SizedBox(width: 10),
+                IconButton(
+                  iconSize: 30,
+                  onPressed: () {},
+                  icon: ClipRRect(
+                    borderRadius: BorderRadius.circular(50),
+                    child: Image.asset(
+                      "assets/profile_picture.png",
+                    )
+                  )
+                )
+              ]
+            )
           )
         ]
       )
