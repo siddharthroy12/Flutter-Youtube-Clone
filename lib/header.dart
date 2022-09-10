@@ -82,6 +82,7 @@ class Header extends StatelessWidget with PreferredSizeWidget {
                     )
                   )
                 ),
+                const SizedBox(width: 10),
                 Ink(
                   decoration: ShapeDecoration(
                     color: Theme.of(context).scaffoldBackgroundColor,
