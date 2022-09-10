@@ -24,4 +24,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: bundle
-          path: build/macos/*
+          path: build/macos/Build/Products/Release/*
