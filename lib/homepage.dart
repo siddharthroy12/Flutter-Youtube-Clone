@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './header.dart';
+import './sidebar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,6 +11,7 @@ class HomePage extends StatelessWidget {
       appBar: const Header(),
       body: Row(
         children: [
+          SideBar()
         ]
       )
     );

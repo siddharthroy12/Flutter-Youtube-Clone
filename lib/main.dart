@@ -17,12 +17,16 @@ void main() {
       iconTheme: const IconThemeData(
         color: Colors.white
       ),
+      textTheme: const TextTheme(
+        headline4: TextStyle(
+          fontSize: 15
+        )
+      ),
       appBarTheme: const AppBarTheme(
         backgroundColor: Color(0xFF202020),
       )
     )
-    )
-  );
+  ));
 }
 
 

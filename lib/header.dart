@@ -13,7 +13,7 @@ class Header extends StatelessWidget with PreferredSizeWidget {
       title: Row(
         children: [
           Padding(
-            padding: EdgeInsets.only(right: 10),
+            padding: const EdgeInsets.only(right: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -53,6 +53,7 @@ class Header extends StatelessWidget with PreferredSizeWidget {
                           const Expanded(
                             child: TextField(
                               decoration: InputDecoration(
+                                hintText: "Search",
                                 border: InputBorder.none,
                                 contentPadding: EdgeInsets.only(
                                   bottom: 10,
@@ -91,7 +92,7 @@ class Header extends StatelessWidget with PreferredSizeWidget {
                   child: IconButton(
                     onPressed: () {},
                     icon: Icon(
-                      Icons.mic,
+                      Icons.mic_outlined,
                       color: Theme.of(context).iconTheme.color
                     ),
                   )
@@ -106,7 +107,7 @@ class Header extends StatelessWidget with PreferredSizeWidget {
                 IconButton(
                   onPressed: () {},
                   icon: Icon(
-                    Icons.camera_alt,
+                    Icons.camera_alt_outlined,
                     color: Theme.of(context).iconTheme.color
                   )
                 ),
@@ -114,7 +115,7 @@ class Header extends StatelessWidget with PreferredSizeWidget {
                 IconButton(
                   onPressed: () {},
                   icon: Icon(
-                    Icons.notifications,
+                    Icons.notifications_outlined,
                     color: Theme.of(context).iconTheme.color
                   )
                 ),
