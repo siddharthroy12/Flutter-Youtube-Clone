@@ -9,7 +9,7 @@ class Header extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      elevation: 0,
+      elevation: 4,
       title: Row(
         children: [
           Expanded(
@@ -24,7 +24,7 @@ class Header extends StatelessWidget with PreferredSizeWidget {
                   )
                 ),
                 Container(
-                  margin: const EdgeInsets.only(left: 10.0),
+                  margin: const EdgeInsets.only(left: 12.0),
                   child: const Image(image: AssetImage("assets/logo.png"), width: 90.0, isAntiAlias: true,)
                 )
               ],
@@ -43,7 +43,6 @@ class Header extends StatelessWidget with PreferredSizeWidget {
               ),
               height: 40,
               padding: const EdgeInsets.all(0),
-              child: Expanded(
                 child: Row(
                   children: [
                     const Expanded(
@@ -54,10 +53,10 @@ class Header extends StatelessWidget with PreferredSizeWidget {
                             bottom: 10,
                             left: 10,
                             right: 10
-                            )
                           )
                         )
-                      ),
+                      )
+                    ),
                     Container(
                       decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.outline
@@ -76,7 +75,6 @@ class Header extends StatelessWidget with PreferredSizeWidget {
                   ]
                 )
               )
-            )
           ),
           Expanded(
             child: Padding(
@@ -97,7 +95,24 @@ class Header extends StatelessWidget with PreferredSizeWidget {
                       ),
                     )
                   ),
-                  const Text("right")
+                  Row(
+                    children: [
+                      IconButton(
+                        onPressed: null,
+                        icon: Icon(
+                          Icons.camera_alt,
+                          color: Theme.of(context).iconTheme.color
+                        )
+                      ),
+                      IconButton(
+                        onPressed: null,
+                        icon: Icon(
+                          Icons.notifications,
+                          color: Theme.of(context).iconTheme.color
+                        )
+                      ),
+                    ]
+                  )
                 ]
               )
             )

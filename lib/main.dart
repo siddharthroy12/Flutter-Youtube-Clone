@@ -9,6 +9,7 @@ void main() {
     theme: ThemeData(
       brightness:  Brightness.dark,
       scaffoldBackgroundColor: const Color(0xFF181818),
+      splashColor: const Color(0xFF373737),
       colorScheme: const ColorScheme.dark(
         outline: Color(0xFF303030),
         surfaceTint: Color(0xFF121212)
@@ -17,7 +18,7 @@ void main() {
         color: Colors.white
       ),
       appBarTheme: const AppBarTheme(
-        backgroundColor: Color(0xFF202020)
+        backgroundColor: Color(0xFF202020),
       )
     )
     )
