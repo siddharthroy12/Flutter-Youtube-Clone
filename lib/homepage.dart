@@ -8,8 +8,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const Header(),
-      body: Container(
-        child: Text("Hello world")
+      body: Row(
+        children: [
+        ]
       )
     );
   }
