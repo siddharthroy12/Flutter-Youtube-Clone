@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget with PreferredSizeWidget {
-  const Header({super.key});
+  const Header({super.key, required this.onMenuTap, });
+
+  final void Function() onMenuTap;
 
   @override
   Size get preferredSize => const Size.fromHeight(56.0);
@@ -9,6 +11,7 @@ class Header extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       elevation: 4,
       title: Row(
         children: [
@@ -18,7 +21,7 @@ class Header extends StatelessWidget with PreferredSizeWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: onMenuTap,
                   icon: Icon(
                     Icons.menu,
                     color: Theme.of(context).iconTheme.color
