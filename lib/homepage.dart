@@ -34,9 +34,13 @@ class _HomePageState extends State<HomePage> {
       drawer: SideBar(showBanner: true, scaffoldKey: _scaffoldKey),
       body: Row(
         children: [
-          SideBar(
+          MediaQuery.of(context).size.width > 500 ? (SideBar(
             showMini: MediaQuery.of(context).size.width < 1300 ? true : !expandSidebar,
             scaffoldKey: _scaffoldKey
+          )) : Container(),
+          Column(
+            children: [
+            ]
           )
         ]
       )
