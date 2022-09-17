@@ -12,7 +12,7 @@ class Header extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      elevation: 4,
+      elevation: 0,
       titleSpacing: MediaQuery.of(context).size.width > 500 ? null : 0,
       title: Row(
         children: [
@@ -110,7 +110,7 @@ class Header extends StatelessWidget with PreferredSizeWidget {
                   )
                 ]
               )
-            )): Spacer(),
+            )): const Spacer(),
             Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Row(
