@@ -6,9 +6,9 @@ class MyCustomScrollBehavior extends MaterialScrollBehavior {
   // Override behavior methods and getters like dragDevices
   @override
   Set<PointerDeviceKind> get dragDevices => {
-        PointerDeviceKind.touch,
-        PointerDeviceKind.mouse,
-      };
+    PointerDeviceKind.touch,
+    PointerDeviceKind.mouse,
+  };
 }
 
 void main() {
@@ -33,8 +33,13 @@ void main() {
         color: Colors.white
       ),
       textTheme: const TextTheme(
-        headline4: TextStyle(
+        headlineMedium: TextStyle(
           fontSize: 15
+        ),
+        titleSmall: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+          color: Color(0xFFaaaaaa)
         )
       ),
       appBarTheme: const AppBarTheme(

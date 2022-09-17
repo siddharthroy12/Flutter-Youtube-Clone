@@ -1,20 +1,7 @@
 import 'package:flutter/material.dart';
 import './header.dart';
 import './sidebar.dart';
-
-const topics = [
-  "All",
-  "Mixes",
-  "Music",
-  "Gaming",
-  "KSI",
-  "Live",
-  "Manga",
-  "Markiplier",
-  "Computer Science",
-  "Electrical Engineering",
-  "Podcasts",
-];
+import './topics.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -41,6 +28,17 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    int crossAxisCount = 4;
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    if (screenWidth < 500) {
+      crossAxisCount = 1;
+    } else if (screenWidth < 900) {
+      crossAxisCount = 2;
+    } else if (screenWidth < 1200) {
+      crossAxisCount = 3;
+    }
+
     return Scaffold(
       key: _scaffoldKey,
       appBar: Header(onMenuTap: toggleSidebar),
@@ -55,29 +53,57 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).appBarTheme.backgroundColor,
-                    border: Border.symmetric(
-                      horizontal: BorderSide(
-                        color: Theme.of(context).colorScheme.outline
-                      ),
-                    )
-                  ),
-                  height: 55,
-                  child: ListView.separated(
-                    separatorBuilder: (BuildContext context, int index) {
-                      return const SizedBox(width: 10);
-                    },
-                    padding: const EdgeInsets.only(left: 20, right: 20),
-                    scrollDirection: Axis.horizontal,
-                    itemCount: topics.length,
+                const Topics(),
+                Expanded(
+                  child: GridView.builder(
+                    padding: const EdgeInsets.all(22),
+                    itemCount: 10,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: crossAxisCount,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15
+                    ),
                     itemBuilder: (BuildContext context, int index) {
-                      return Chip(
-                        label: Text(topics[index]),
+                      return Container(
+                        decoration: const BoxDecoration(
+                        ),
+                        child: Column(
+                          children: [
+                            const Image(image: AssetImage("assets/thumbnails/flutter_stack.webp")),
+                            const SizedBox(height: 15),
+                            Expanded(
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(50),
+                                    child: Image.asset(
+                                      'assets/profile_pictures/flutter.jpg',
+                                       width: 36,
+                                       height: 36
+                                    ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        const Text("Stack (Flutter Widget of the Week)"),
+                                        const SizedBox(height: 10),
+                                        Text("Flutter", style: Theme.of(context).textTheme.titleSmall),
+                                        const SizedBox(height: 5),
+                                        Text("24K views • 4 months ago", style: Theme.of(context).textTheme.titleSmall)
+                                      ]
+                                    )
+                                  )
+                                ]
+                              )
+                            )
+                          ]
+                        )
                       );
                     },
-                  ),
+                  )
                 )
               ]
             )

@@ -16,7 +16,7 @@ class ListSectionHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(title, style: Theme.of(context).textTheme.headline4)
+      title: Text(title, style: Theme.of(context).textTheme.headlineMedium)
     );
   }
 }
@@ -27,7 +27,7 @@ class ListItem extends StatelessWidget {
     required this.leading,
     required this.text,
     required this.onTap,
-    this.mini=false
+    this.mini = false
   });
 
   final Widget leading;
