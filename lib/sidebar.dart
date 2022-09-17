@@ -42,7 +42,7 @@ class ListItem extends StatelessWidget {
       child: InkWell(
         onTap: () {},
         child: mini ? ListTile(
-          contentPadding: mini ? EdgeInsets.all(0) : null,
+          contentPadding: const EdgeInsets.all(0),
           title: Padding(padding: const EdgeInsets.symmetric(vertical: 20), child: Column(
             children: [
               leading,
@@ -57,8 +57,9 @@ class ListItem extends StatelessWidget {
             ]
           ))
         ) : ListTile(
+          contentPadding: const EdgeInsets.only(left: 23),
           onTap: onTap,
-          leading: leading ,
+          leading: leading,
           title: Text(
             style: const TextStyle(
               fontWeight: FontWeight.w300
@@ -162,6 +163,7 @@ class SideBar extends StatelessWidget {
             const Divider(),
             const ListSectionHeader(title: "SUBSCRIPTIONS"),
             ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: subscriptions.length,
               itemBuilder: (BuildContext context, int index) {
